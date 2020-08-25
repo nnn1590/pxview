@@ -46,12 +46,7 @@ Unofficial Pixiv app client for Android and iOS, built with React Native.
 1. `$ git clone https://github.com/alphasp/pxview`
 2. `$ npm install`
 3. `$ npm run pod-install`
-4. Set up Firebase account on [Firebase](https://console.firebase.google.com/). 
-	- Create a new project, and enable Google Analytics
-	- [Android] Add android app on firebase console, download `google-services.json` and move to `/android/app` folder
-	- [iOS] Add iOS app on firebase console, download `GoogleService-Info.plist` and move to `/ios` folder
-	- (Optional) In app feedback feature: Create Realtime Database from firebase console and enable rules to write to `feedback`
-5.	Run the app
+4.	Run the app
 	- [Android] `$ npm run android`
 	- [iOS] `$ npm run ios`
 
@@ -62,7 +57,6 @@ Unofficial Pixiv app client for Android and iOS, built with React Native.
 - [react-navigation](https://github.com/react-community/react-navigation) is the official react-native navigation solution. It is extensible yet easy-to-use
 - [react-native-paper](https://github.com/callstack/react-native-paper) is a Material Design library for React Native (Android & iOS)
 - [react-native-localization](https://github.com/stefalda/ReactNativeLocalization) is a library to localize the ReactNative interface
-- [react-native-firebase](https://github.com/invertase/react-native-firebase) is a A well-tested feature-rich modular Firebase implementation for React Native. Supports both iOS & Android platforms for all Firebase services. It is use in this project for crash reporting and analytics.
 - [normalizr](https://github.com/paularmstrong/normalizr) normalizes nested JSON according to a schema
 - [reselect](https://github.com/reactjs/reselect) is a selector library for Redux that is efficient and can compute derived data, allowing Redux to store the minimal possible state.
 - And more..

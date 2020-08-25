@@ -11,7 +11,6 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import { withTheme } from 'react-native-paper';
-import analytics from '@react-native-firebase/analytics';
 import Share from 'react-native-share';
 import ActionButton from 'react-native-action-button';
 import { AndroidBackHandler } from 'react-navigation-backhandler';
@@ -102,19 +101,12 @@ class Detail extends Component {
       }
       if (isFromDeepLink) {
         fetchIllustDetail(illustId);
-        analytics().logEvent(`Screen_${SCREENS.Detail}`, {
-          id: illustId.toString(),
-          fromDeepLink: true,
-        });
       } else {
         this.masterListUpdateListener = DeviceEventEmitter.addListener(
           'masterListUpdate',
           this.handleOnMasterListUpdate,
         );
         addBrowsingHistoryIllusts(item.id);
-        analytics().logEvent(`Screen_${SCREENS.Detail}`, {
-          id: item.id.toString(),
-        });
       }
     });
   }
@@ -199,10 +191,6 @@ class Detail extends Component {
         index,
       });
       InteractionManager.runAfterInteractions(() => {
-        analytics().logEvent(`Screen_${SCREENS.Detail}`, {
-          id: items[index].id.toString(),
-          fromSwipe: true,
-        });
         addBrowsingHistoryIllusts(items[index].id);
       });
     }

@@ -6,7 +6,6 @@ import {
   InteractionManager,
   Keyboard,
 } from 'react-native';
-import database from '@react-native-firebase/database';
 import { connect } from 'react-redux';
 import { withTheme, TextInput } from 'react-native-paper';
 import DeviceInfo from 'react-native-device-info';
@@ -48,7 +47,6 @@ class Feedback extends Component {
 
   componentDidMount() {
     this.setHeaderRight();
-    this.ref = database().ref('feedback');
   }
 
   componentWillUnmount() {
@@ -111,7 +109,6 @@ class Feedback extends Component {
         appVersion: DeviceInfo.getVersion(),
         appBuildNumber: DeviceInfo.getBuildNumber(),
         locale: DeviceInfo.getDeviceLocale(),
-        createdAt: database.ServerValue.TIMESTAMP,
         feedback,
         email,
       })

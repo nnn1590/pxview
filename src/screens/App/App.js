@@ -8,7 +8,6 @@ import {
   useLinking,
 } from '@react-navigation/native';
 import { getStateFromPath } from '@react-navigation/core';
-import analytics from '@react-native-firebase/analytics';
 import {
   DefaultTheme as PaperDefaultTheme,
   DarkTheme as PaperDarkTheme,
@@ -129,9 +128,6 @@ const App = () => {
   const handleOnNavigationStateChange = (state) => {
     const previousRouteName = routeNameRef.current;
     const currentRouteName = getActiveRouteName(state);
-    if (previousRouteName !== currentRouteName) {
-      analytics().setCurrentScreen(currentRouteName, currentRouteName);
-    }
     routeNameRef.current = currentRouteName;
   };
 
