@@ -40,12 +40,12 @@ The `gms-firebase-fabric-free` branch has been changed to not use Firebase, anal
 
 
 
-## Download 
-<a href='https://play.google.com/store/apps/details?id=com.utopia.pxview&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="175" /></a>
+## Download (Original/Play Store)
+<a href='https://play.google.com/store/apps/details?id=com.utopia.pxview'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="175" /></a>
 
 
 ## Getting Started
-1. `$ git clone https://github.com/alphasp/pxview`
+1. `$ git clone https://github.com/nnn1590/pxview.git -b gms-firebase-fabric-free`
 2. `$ npm install`
 3. `$ npm run pod-install`
 4.	Run the app
