@@ -20,7 +20,7 @@ import com.android.build.OutputFile
  *   // default. Can be overridden with ENTRY_FILE environment variable.
  *   entryFile: "index.android.js",
  *
- *   // https://facebook.github.io/react-native/docs/performance#enable-the-ram-format
+ *   // https://reactnative.dev/docs/performance#enable-the-ram-format
  *   bundleCommand: "ram-bundle",
  *
  *   // whether to bundle JS and assets in debug mode
@@ -132,8 +132,8 @@ android {
         applicationId "com.utopia.pxview"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 305
-        versionName "4.4"
+        versionCode 308
+        versionName "4.6"
     }
     signingConfigs {
         release {
@@ -154,6 +154,8 @@ android {
         }
     }
     buildTypes {
+        // Caution! In production, you need to generate your own keystore file.
+        // see https://reactnative.dev/docs/signed-apk-android.
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
@@ -161,22 +163,6 @@ android {
         }
     }
     
-    packagingOptions {
-        pickFirst "lib/armeabi-v7a/libc++_shared.so"
-        pickFirst "lib/arm64-v8a/libc++_shared.so"
-        pickFirst "lib/x86/libc++_shared.so"
-        pickFirst "lib/x86_64/libc++_shared.so"
-    }
-
-    // packagingOptions {
-    //     pickFirst '**/armeabi-v7a/libc++_shared.so'
-    //     pickFirst '**/x86/libc++_shared.so'
-    //     pickFirst '**/arm64-v8a/libc++_shared.so'
-    //     pickFirst '**/x86_64/libc++_shared.so'
-    //     pickFirst '**/x86/libjsc.so'
-    //     pickFirst '**/armeabi-v7a/libjsc.so'
-    // }
-
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
@@ -194,7 +180,6 @@ android {
 
 repositories {
     mavenCentral()
-    maven { url 'https://maven.fabric.io/public' }
     maven { url 'https://maven.google.com' }
 }
 
@@ -222,6 +207,7 @@ dependencies {
     }
     debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.flipper'
+        exclude group:'com.squareup.okhttp3', module:'okhttp'
     }
     debugImplementation("com.facebook.flipper:flipper-fresco-plugin:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.flipper'
