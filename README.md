@@ -6,6 +6,8 @@
 
 Unofficial Pixiv app client for Android and iOS, built with React Native.
 
+## NOTE
+The `gms-firebase-fabric-free` branch has been changed to not use Firebase, analytics and GMS, but no changes have been made to the privacy policy and iOS version.
 
 ## Screenshots
 ![android_recommended](./screenshots/android/1.png)
