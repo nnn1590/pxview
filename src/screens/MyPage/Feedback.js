@@ -100,6 +100,7 @@ class Feedback extends Component {
     Keyboard.dismiss();
     this.setState({ loading: true });
     const manufacturer = await DeviceInfo.getManufacturer();
+    const timestamp = new Date().getTime() + (new Date().getTimezoneOffset()*60*1000);
     this.ref
       .push()
       .set({
@@ -112,7 +113,7 @@ class Feedback extends Component {
         appBuildNumber: DeviceInfo.getBuildNumber(),
         locale: RNLocalize.getLocales()[0].languageTag,
         country: RNLocalize.getCountry(),
-        createdAt: database.ServerValue.TIMESTAMP,
+        createdAt: timestamp,
         feedback,
         email,
       })
