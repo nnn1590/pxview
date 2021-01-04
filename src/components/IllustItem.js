@@ -6,6 +6,7 @@ import { DarkTheme } from 'react-native-paper';
 import PXTouchable from './PXTouchable';
 import PXImage from './PXImage';
 import OverlayImagePages from './OverlayImagePages';
+import OverlayXRestrict from './OverlayXRestrict';
 import OverlayUgoiraIndicator from './OverlayUgoiraIndicator';
 import OverlayBookmarkIllustButton from './OverlayBookmarkIllustButton';
 import OverlayMutedIndicator from './OverlayMutedIndicator';
@@ -130,6 +131,19 @@ class IllustItem extends Component {
         {item.meta_pages && item.meta_pages.length ? (
           <OverlayImagePages total={item.meta_pages.length} />
         ) : null}
+        {(() => {
+          switch (item.x_restrict) {
+            case 1:
+              return <OverlayXRestrict text='R-18' />;
+              break;
+            case 2:
+              return <OverlayXRestrict text='R-18G' />;
+              break;
+            /*default:
+              return <OverlayXRestrict text='NORMAL' />;
+              break;*/
+          }
+        })()}
         {item.type === 'ugoira' && <OverlayUgoiraIndicator />}
       </PXTouchable>
     );
