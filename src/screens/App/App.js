@@ -16,7 +16,7 @@ import {
 import SplashScreen from 'react-native-splash-screen';
 import FlashMessage from 'react-native-flash-message';
 import AppNavigator from '../../navigations/AppNavigator';
-import LoginNavigator from '../../navigations/LoginNavigator';
+import AuthNavigator from '../../navigations/AuthNavigator';
 import Loader from '../../components/Loader';
 import ModalRoot from '../../containers/ModalRoot';
 import PXSnackbar from '../../components/PXSnackbar';
@@ -72,6 +72,7 @@ const App = () => {
       [`${SCREENS.Detail}-2`]: 'member_illust.php',
       [`${SCREENS.NovelDetail}-1`]: 'novels/:novelId',
       [`${SCREENS.UserDetail}-1`]: 'member.php',
+      [SCREENS.Login]: 'account/login',
     },
     getStateFromPath: (path, options) => {
       const state = getStateFromPath(path, options);
@@ -181,7 +182,7 @@ const App = () => {
       />
     );
   } else {
-    renderComponent = <LoginNavigator />;
+    renderComponent = <AuthNavigator />;
   }
   return (
     <PaperProvider theme={theme}>
