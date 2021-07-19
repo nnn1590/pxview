@@ -76,6 +76,8 @@ const AppNavigator = ({ initialRouteName }) => {
         screenOptions={{
           headerTintColor: globalStyleVariables.HEADER_TINT_COLOR,
           headerBackTitle: null,
+          headerTopInsetEnabled: false,
+          stackAnimation: 'fade',
         }}
       >
         <Stack.Screen
@@ -161,8 +163,6 @@ const AppNavigator = ({ initialRouteName }) => {
         <Stack.Screen
           name={SCREENS.Detail}
           component={Detail}
-          // todo handle deep link in component
-          // path="(member_illust.php|illusts|artworks|en/artworks)/:illustId?"
           options={{
             headerShown: false,
           }}
@@ -170,7 +170,6 @@ const AppNavigator = ({ initialRouteName }) => {
         <Stack.Screen
           name={SCREENS.NovelDetail}
           component={NovelDetail}
-          // path: '(novel/show.php|novels)/:novelId?',
           options={{
             headerShown: false,
           }}
@@ -178,7 +177,6 @@ const AppNavigator = ({ initialRouteName }) => {
         <Stack.Screen
           name={SCREENS.UserDetail}
           component={UserDetail}
-          // path: '(member.php|users)/:uid?',
           options={{
             headerShown: false,
           }}

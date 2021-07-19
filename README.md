@@ -4,7 +4,7 @@
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/alphasp/pxview/pulls)
 
-Unofficial Pixiv app client for Android and iOS, built with React Native.
+PxView also know as PxView R is an unofficial Pixiv app client for Android and iOS, built with React Native.
 
 ## NOTE
 The `gms-firebase-fabric-free` branch has been changed to not use Firebase, analytics and GMS, but no changes have been made to the privacy policy and iOS version.
@@ -41,7 +41,7 @@ The `gms-firebase-fabric-free` branch has been changed to not use Firebase, anal
 
 
 ## Download (Original/Play Store)
-<a href='https://play.google.com/store/apps/details?id=com.utopia.pxview'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="175" /></a>
+<a href='https://play.google.com/store/apps/details?id=com.utopia.pxviewr'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="175" /></a>
 
 
 ## Getting Started
